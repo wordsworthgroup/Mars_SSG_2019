@@ -2,7 +2,7 @@
 % Do:
 % a) extreme SSG warming calculation
 % b) optimal SSG warming calculation
-% See Supplementary Material of Wordsworth, Cockell & Kerber 2019.
+% See Supplementary Information of Wordsworth, Cockell & Kerber 2019.
 %
 % Robin Wordsworth 16/10/18
 
@@ -27,11 +27,11 @@ Ts     = fzero(bal,T0) % resultant surface temperature [K]
 %% optimal SSG warming calculation
 
 T     = [0.8 0.6] % transmission of 1-cm aerogel layer (tiles, particles)
-tau   = -log(T) % optical depth of 1-cm aerogel layer 
+tau   = -log(T) % vertical path optical depth of 1-cm aerogel layer 
 h     = 0.01 % aerogel layer height [m]
 alph  = tau/h % layer extinction coefficient [1/m]
-hm    = 1./alph % optimal thickness for aerogel layer
-kap   = 0.02; % aerogel thermal conductivity [W/m/K]
-costh = 1.0; % cosine of zenith angle [rad]
-dT    = Fa*exp(-1)./(alph*kap) % temperature difference [K]
+muav  = 1.0; % cosine of zenith angle [rad]
+hm    = muav./alph % optimal thickness for aerogel layer
+kap   = 0.02; % aerogel thermal conductivity @ 1 bar pressure [W/m/K]
+dT    = muav*Fa*exp(-1)./(alph*kap) % temperature difference [K]
 
