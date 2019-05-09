@@ -199,7 +199,7 @@ for it=1:nt
     % update temperature
     T = T + dTdt*dt;
     
-    % calculate latent heat consumed for ice melting
+    % calculate change in H2O budget and temperature due to melting / freezing
     if(include_latent)
         
         % figure out if melting / freezing is occurring
