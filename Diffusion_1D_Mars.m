@@ -319,5 +319,4 @@ contour(t_a/Torb,d,T_a',[1 1]*Twater,'w','LineWidth',2);
 xlabel('time [Mars year]')
 ylabel('depth [m]')
 title('temperature [K]')
-axis([0 t_f/Torb 0 20])
-axis([0 t_f/Torb 0 30])
+axis([0 t_f/Torb 0 40])
