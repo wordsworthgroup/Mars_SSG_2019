@@ -298,14 +298,14 @@ xlabel('time [Mars year]')
 ylabel('energy error')
 
 subplot(4,2,7)
-plot(t_a/Torb,(sum(u_ice_a+u_wat_a,2)*dz - mean(sum(u_ice_a+u_wat_a,2)*dz) )/mean(sum(u_ice_a+u_wat_a,2)*dz),'b');
+plot(t_a/Torb,(sum(u_ice_a+u_wat_a,2) - mean(sum(u_ice_a+u_wat_a,2)) )/mean(sum(u_ice_a+u_wat_a,2)),'b');
 xlabel('time [Mars year]')
 ylabel('H_2O error')
 
 subplot(2,2,4)
-plot(t_a/Torb,sum(u_ice_a+u_wat_a,2)*dz,'k'); hold on
-plot(t_a/Torb,sum(u_ice_a,2)*dz,'r')
-plot(t_a/Torb,sum(u_wat_a,2)*dz,'b')
+plot(t_a/Torb,sum(u_ice_a+u_wat_a,2),'k'); hold on
+plot(t_a/Torb,sum(u_ice_a,2),'r')
+plot(t_a/Torb,sum(u_wat_a,2),'b')
 xlabel('time [Mars year]')
 ylabel('column mass [kg/m^2]')
 legend('total','ice','water')
