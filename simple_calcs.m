@@ -2,7 +2,7 @@
 % Do:
 % a) extreme SSG warming calculation
 % b) optimal SSG warming calculation
-% See Supplementary Information of Wordsworth, Cockell & Kerber 2019.
+% See Methods section of Wordsworth, Cockell & Kerber 2019, Nature Astronomy.
 %
 % Robin Wordsworth 16/10/18
 
