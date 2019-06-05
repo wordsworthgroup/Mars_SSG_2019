@@ -15,11 +15,12 @@ clear all
 % Therefore we need to radiate what we received back in the near-IR/visible
 % (i.e. at wavelengths of 2 um and shorter)
 
-Fa     = 150; % absorbed visible flux [W/m2]
+Fa     = 150; % incident visible flux [W/m2]
+Fb     = Fa; % flux reaching layer base (no attenuation in idealized case) [W/m2]
 lam_c  = 2; % cutoff wavelength [um]
 lam_VI = linspace(1e-8,lam_c,1e4); % wavelength array [um]
 B_VI   = @(T) pi*blackbody_gen_fn(T,lam_VI,1); % spectral flux [W/m2/um]
-bal    = @(T) trapz(lam_VI,B_VI(T)) - Fa; % balance equation [W/m2]
+bal    = @(T) trapz(lam_VI,B_VI(T)) - Fb; % balance equation [W/m2]
 
 T0     = 100; % starting guess for surface temperature [K]
 Ts     = fzero(bal,T0) % resultant surface temperature [K]
